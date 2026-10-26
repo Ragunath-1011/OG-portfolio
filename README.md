@@ -20,6 +20,8 @@ npm run dev
 
 Vite serves the site at the URL printed in the terminal, normally `http://localhost:5173`.
 
+No `.env` file, API key or backend service is required for the current static build. The contact form uses the visitor's own email client.
+
 ### Other scripts
 
 ```bash
@@ -39,6 +41,8 @@ public/
   icon-512.png         PWA icon
   apple-touch-icon.png iOS home-screen icon
   og-image.png         Open Graph / social preview image
+  robots.txt           Crawler policy
+  site.webmanifest     PWA name, icons and theme colours
 src/
   components/          Navbar, footer, project UI, theme toggle, icons, etc.
   data/                All editable profile, skills, project and credential data
@@ -102,6 +106,8 @@ The project is a static site. Run `npm run build` and deploy the contents of `di
 
 If deploying to a GitHub Pages subpath, set the Vite `base` option in `vite.config.js` first. No deployment URL, custom domain or analytics service is configured here.
 
+Once the final domain is known, replace the root-relative `og:image` and `twitter:image` URLs with absolute URLs, add `<link rel="canonical">` and optionally an `og:url`. Some social scrapers do not resolve relative Open Graph images. The `Person` JSON-LD already uses the verified GitHub and LinkedIn profiles.
+
 ## Assets and links still to supply
 
 The site deliberately avoids fabricated links and metrics. When these are available, add them to `src/data/projects.js`:
@@ -111,3 +117,10 @@ The site deliberately avoids fabricated links and metrics. When these are availa
 - Certificate images or public credential URLs, if those should replace the plain credential entries.
 
 The visible contact details are the verified email address, GitHub profile and LinkedIn profile.
+
+## Validation
+
+- `npm run lint` and `npm run build` pass.
+- Browser checks cover 320, 375, 768, 1024 and 1440 px widths: no horizontal overflow, no broken images, and no console errors.
+- Navigation, theme persistence, project filters, modal open/close/focus restoration, the mailto form, copy-email control and resume download are exercised in-browser.
+- The page is checked with axe-core in both themes and at mobile/desktop widths with zero WCAG A/AA violations.

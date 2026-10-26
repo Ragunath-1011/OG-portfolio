@@ -1,0 +1,29 @@
+{
+  "name": "Ragunath D. — Developer Portfolio",
+  "short_name": "Ragunath D.",
+  "description": "Portfolio of Ragunath D., AI & Data Science graduate focused on full-stack development, machine learning and analytics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080b0a",
+  "theme_color": "#080b0a",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
